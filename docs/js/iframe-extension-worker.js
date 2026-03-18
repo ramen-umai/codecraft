@@ -50,6 +50,7 @@ class IframeExtensionWorker {
     this.iframe.dataset.id = this.id;
     this.iframe.style.display = 'none';
     this.iframe.setAttribute('aria-hidden', 'true');
+    this.iframe.sandbox = 'allow-scripts';
     this.iframe.allow = generateAllow();
     document.body.appendChild(this.iframe);
     window.addEventListener('message', this._onWindowMessage.bind(this));
