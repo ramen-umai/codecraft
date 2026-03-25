@@ -1,7 +1,7 @@
 import LazyScratchBlocks from './tw-lazy-scratch-blocks';
 import {defaultBlockColors} from './themes';
 
-const categorySeparator = '<sep gap="36"/>';
+const categorySeparator = '<sep gap="50"/>';
 
 const blockSeparator = '<sep gap="36"/>'; // At default scale, about 28px
 
@@ -142,7 +142,26 @@ const motion = function (isInitialSetup, isStage, targetId, colors) {
         ${blockSeparator}
         <block id="${targetId}_xposition" type="motion_xposition"/>
         <block id="${targetId}_yposition" type="motion_yposition"/>
-        <block id="${targetId}_direction" type="motion_direction"/>`}
+        <block id="${targetId}_direction" type="motion_direction"/>
+        ${blockSeparator}
+        <block type="motion_scroll_right">
+            <value name="DISTANCE">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_scroll_up">
+            <value name="DISTANCE">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_align_scene"/>
+        <block type="motion_xscroll"/>
+        <block type="motion_yscroll"/>
+        "`}
         ${categorySeparator}
     </category>
     `;
@@ -409,6 +428,11 @@ const control = function (isInitialSetup, isStage, targetId, colors) {
                 </shadow>
             </value>
         </block>
+        <block type="control_wait">
+            <value name="DURATION">
+                <shadow type="math_positive_number"/>
+            </value>
+        </block>
         ${blockSeparator}
         <block type="control_repeat">
             <value name="TIMES">
@@ -424,6 +448,17 @@ const control = function (isInitialSetup, isStage, targetId, colors) {
         <block id="wait_until" type="control_wait_until"/>
         <block id="repeat_until" type="control_repeat_until"/>
         <block id="while" type="control_while"/>
+        <block id="for_each" type="control_for_each">
+            <value name="VALUE">
+                <shadow type="math_whole_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        ${blockSeparator}
+        <block type="control_get_counter" id="control_get_counter"></block>
+        <block type="control_incr_counter" id="control_incr_counter"></block>
+        <block type="control_clear_counter" id="control_clear_counter"></block>
         ${blockSeparator}
         <block type="control_stop"/>
         ${blockSeparator}
@@ -508,6 +543,7 @@ const sensing = function (isInitialSetup, isStage, targetId, colors) {
         `}
         ${blockSeparator}
         <block id="loudness" type="sensing_loudness"/>
+        <block id="loud" type="sensing_loud"/>
         ${blockSeparator}
         <block id="timer" type="sensing_timer"/>
         <block type="sensing_resettimer"/>
@@ -539,6 +575,7 @@ const operators = function (isInitialSetup, isStage, targetId, colors) {
         id="operators"
         colour="${colors.primary}"
         secondaryColour="${colors.tertiary}">
+        ${blockSeparator}
         <block type="operator_add">
             <value name="NUM1">
                 <shadow type="math_number">

@@ -59,6 +59,9 @@ import alertInsetIconURL from './alert/alertSmall.svg';
 
 import commentIcon from './comment/comment.png';
 
+import gce3Icon from './gce3/gce3.png';
+import gce3InsetIcon from './gce3/gce3Small.svg';
+
 import pmIcon from './pm/library.svg';
 import spIcon from './pm/spLib.svg';
 import tbIcon from './pm/turbobuilder.png';
@@ -477,6 +480,27 @@ export default [
     {
         name: (
             <FormattedMessage
+                defaultMessage="Geometric Calculations v3"
+                description='Add "Geometric Calculations" Version3 to your project.'
+                id="cc.extension.gce3.name"
+            />
+        ),
+        extensionId: 'gce3',
+        iconURL: gce3Icon,
+        insetIconURL: gce3InsetIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage='Add "Geometric Calculations" Extension Version3 to your project.'
+                description='Add "Geometric Calculations" Extension Version3 to your project.'
+                id="cc.extension.gce3.description"
+            />
+        ),
+        tags: ['cc'],
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
                 defaultMessage="Penguinmod Extension Gallery"
                 description="Name of penguin mod in extension library"
                 id="pm.extensionGallery.name"
@@ -488,8 +512,8 @@ export default [
         description: (
             <FormattedMessage
                 // eslint-disable-next-line max-len
-                defaultMessage="Penguinmodの拡張機能一覧。"
-                description="Penguinmodの拡張機能一覧。"
+                defaultMessage="List of Penguin Mod extensions—there are many extensions not available in Turbowarp."
+                description="List of Penguin Mod extensions—there are many extensions not available in Turbowarp."
                 id="pm.extensionGallery.more"
             />
         ),
@@ -510,8 +534,8 @@ export default [
         description: (
             <FormattedMessage
                 // eslint-disable-next-line max-len
-                defaultMessage="SharkPoolさんによる拡張機能一覧。"
-                description="SharkPoolさんによる拡張機能一覧。"
+                defaultMessage="A list of extensions by SharkPool."
+                description="A list of extensions by SharkPool."
                 id="sp.extensionGallery.more"
             />
         ),
@@ -532,7 +556,7 @@ export default [
         description: (
             <FormattedMessage
                 // eslint-disable-next-line max-len
-                defaultMessage="ramen-umaiが作成した拡張機能ギャラリー。"
+                defaultMessage="Extension Gallery created by ramen-umai."
                 description="ramen-umaiが作成した拡張機能ギャラリー。"
                 id="cc.extensionGallery.more"
             />
